@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const Results = ({ results }) => {
   return (
-    <div>
-      {results}
-    </div>
+    <pre>
+      {JSON.stringify(results, null, 2)}
+    </pre>
   );
 };
 
