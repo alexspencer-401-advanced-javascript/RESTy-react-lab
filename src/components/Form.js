@@ -7,14 +7,15 @@ import History from './History';
 export default class Form extends Component {
 
   state = {
-    arr: [],
+    history: [],
     apiData: {},
-    url: '',
+    url: 'URL',
+    method: '',
     textArea: ''
   }
 
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
   }
 
   handleSubmit = (event) => {
@@ -22,14 +23,16 @@ export default class Form extends Component {
     apiCall(this.state.url, this.state.name)
       .then(result => {
         this.setState({ apiData: result });
-        this.setState(state => ({ arr: [{ url: this.state.url, method: this.state.method }, ...state.arr] }));
-      });
+        this.setState(state => ({ history: [{ url: this.state.url, method: this.state.method }, ...state.history] }));
+      }
+      );
   }
 
   render() { //check textarea value
     return (
-      <>
-        <History history={this.state.arr} />
+      
+      <div>
+        <History history={this.state.history} />
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="url" value={this.state.url} onChange={this.handleChange} />
           <div>
@@ -43,7 +46,8 @@ export default class Form extends Component {
           <input type="textarea" value={this.state.textArea.value} onChange={this.handleChange} />
         </form>
         <Results results={this.state.apiData} />
-      </>
+      </div>
+    
     );
   }
 }
