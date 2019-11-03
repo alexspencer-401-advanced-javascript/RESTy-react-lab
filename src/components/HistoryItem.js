@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HistoryItem = ({ url, method }) => {
-  console.log(url, method);
   return (
     <>
       <p>{url}</p>

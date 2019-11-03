@@ -10,7 +10,7 @@ const Results = ({ results }) => {
 };
 
 Results.propTypes = {
-  results: PropTypes.object
+  results: PropTypes.array
 };
 
 export default Results;

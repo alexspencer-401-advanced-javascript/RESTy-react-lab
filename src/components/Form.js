@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import apiCall from '../services/api-call';
 import Results from './Results';
 import History from './History';
-// import HistoryItem from './HistoryItem';
 
 export default class Form extends Component {
 
   state = {
     history: [],
-    apiData: {},
-    url: 'URL',
+    apiData: [],
+    url: '',
     method: '',
-    textArea: ''
+    jsonInput: ''
   }
 
   handleChange = ({ target }) => {
@@ -28,7 +27,7 @@ export default class Form extends Component {
       );
   }
 
-  render() { //check textarea value
+  render() {
     return (
       
       <div>
@@ -43,7 +42,8 @@ export default class Form extends Component {
             <input type="radio" name="method" value="DELETE" onChange={this.handleChange} />DELETE
             <button>Go!</button>
           </div>
-          <input type="textarea" value={this.state.textArea.value} onChange={this.handleChange} />
+          <textarea name="jsonInput" value={this.state.jsonInput} onChange={this.handleChange} cols="30" rows="10"></textarea>
+          {/* <input type="text" value={this.state.textArea.value} onChange={this.handleChange} /> */}
         </form>
         <Results results={this.state.apiData} />
       </div>
