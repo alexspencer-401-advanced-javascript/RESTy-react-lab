@@ -1,0 +1,32 @@
+.Form {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  input[type="radio" ] {
+    display: none;
+  }
+  label {
+    margin-right: 6px;
+    margin-left: 1em;
+    background-color: lightgray;
+    cursor: pointer;
+    padding: 4px;
+    color: #000;
+  }
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.history {
+  width: 25vw;
+}
+
+.urlInput {
+  width: 60vw;
+}
+
+.radio {
+  border: 1px solid blue;
+  margin: 10px;
+}
+
