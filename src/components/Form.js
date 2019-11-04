@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import apiCall from '../services/api-call';
 import Results from './Results';
 import History from './History';
+import styles from './Form.css'
 
 export default class Form extends Component {
 
@@ -29,25 +30,36 @@ export default class Form extends Component {
 
   render() {
     return (
-      
-      <div>
-        <History history={this.state.history} />
+
+      <div className={styles.Form}>
+        <History className={styles.history} history={this.state.history} />
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="url" value={this.state.url} onChange={this.handleChange} />
-          <div>
-            <input type="radio" name="method" value="GET" onChange={this.handleChange} />GET
-            <input type="radio" name="method" value="PUT" onChange={this.handleChange} />PUT
-            <input type="radio" name="method" value="POST" onChange={this.handleChange} />POST
-            <input type="radio" name="method" value="PATCH" onChange={this.handleChange} />PATCH
-            <input type="radio" name="method" value="DELETE" onChange={this.handleChange} />DELETE
+          <input className={styles.UrlInput} type="text" name="url" value={this.state.url} onChange={this.handleChange} />
+          <section>
+            <label>
+              <input type="radio" name="method" value="GET" onChange={this.handleChange} />GET
+            </label>
+            <label>
+              <input type="radio" name="method" value="PUT" onChange={this.handleChange} />PUT
+            </label>
+            <label>
+              <input type="radio" name="method" value="POST" onChange={this.handleChange} />POST
+            </label>
+            <label>
+              <input type="radio" name="method" value="PATCH" onChange={this.handleChange} />PATCH
+            </label>
+            <label>
+              <input type="radio" name="method" value="DELETE" onChange={this.handleChange} />DELETE
+            </label>
             <button>Go!</button>
+          </section>
+          <textarea className={styles.jsonContainer} name="jsonInput" value={this.state.jsonInput} onChange={this.handleChange} cols="30" rows="5"></textarea>
+          <div className={styles.results}>
+            <Results results={this.state.apiData} />
           </div>
-          <textarea name="jsonInput" value={this.state.jsonInput} onChange={this.handleChange} cols="30" rows="10"></textarea>
-          {/* <input type="text" value={this.state.textArea.value} onChange={this.handleChange} /> */}
         </form>
-        <Results results={this.state.apiData} />
       </div>
-    
+
     );
   }
 }

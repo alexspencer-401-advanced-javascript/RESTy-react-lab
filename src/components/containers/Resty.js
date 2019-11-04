@@ -2,15 +2,16 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Form from '../Form';
-import Results from '../Results';
+import styles from './Resty.css';
 
-export default function App() {
+export default function Resty() {
   return (
     <>
-      <Header />
-      <Form />
-      <Results />
-      <Footer />
+      <div className={styles.Resty}>
+        <Header />
+        <Form />
+        <Footer />
+      </div>
     </>
   );
 }

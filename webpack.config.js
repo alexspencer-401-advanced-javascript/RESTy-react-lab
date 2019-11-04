@@ -1,6 +1,6 @@
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-  
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -30,7 +30,6 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: { sourceMap: true }
           },
           {
             loader: 'css-loader',
@@ -62,4 +61,3 @@ module.exports = {
     ]
   }
 };
-

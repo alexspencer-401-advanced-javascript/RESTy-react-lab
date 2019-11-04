@@ -1,0 +1,44 @@
+.Form {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: lightgray;
+  input[type="radio" ] {
+    display: none;
+  }
+  label {
+    margin-right: 6px;
+    margin-left: 1em;
+    cursor: pointer;
+    background-color: navy;
+    padding: 4px;
+    color: white;
+  }
+  border: 1px dashed goldenrod;
+}
+
+.history {
+  width: 30vw;
+  margin: 1em;
+  display: flex;
+}
+
+
+.jsonContainer {
+  width: 70vw;
+  margin: 1em;
+  display: flex;
+}
+
+.results {
+  background-color: white;
+  width: 70vw;
+  margin: 1em;
+  padding: 5px;
+}
+
+.UrlInput {
+  width: 70vw;
+  margin: 1em;
+}

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Results.css';
 
 const Results = ({ results }) => {
   return (
-    <pre>
-      {JSON.stringify(results, null, 2)}
+    <pre className={styles.Results}>
+      Results: {JSON.stringify(results, null, 2)}
     </pre>
   );
 };
