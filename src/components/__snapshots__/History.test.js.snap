@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`History component renders History 1`] = `
+<Fragment>
+  <h1>
+    History
+  </h1>
+  <ul>
+    <HistoryItem
+      key="0"
+      method="GET"
+      url="https://hey-arnold-api.herokuapp.com/api/v1/characters"
+    />
+  </ul>
+</Fragment>
+`;
