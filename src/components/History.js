@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem';
 
 const History = ({ history }) => {
-  const historyElements = history.map(thing => {
-    <li key={`${thing.url}`}>
-      <HistoryItem {...thing} />
-    </li>;
+  const historyElements = history.map((item, i) => {
+    return <HistoryItem key={i}{...item} />;
   });
   return (
     <>

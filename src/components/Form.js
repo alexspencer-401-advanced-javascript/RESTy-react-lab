@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import apiCall from '../services/api-call';
 import Results from './Results';
 import History from './History';
-// import HistoryItem from './HistoryItem';
 
 export default class Form extends Component {
 
   state = {
-    arr: [],
-    apiData: {},
+    history: [],
+    apiData: [],
     url: '',
-    textArea: ''
+    method: '',
+    jsonInput: ''
   }
 
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
   }
 
   handleSubmit = (event) => {
@@ -22,14 +22,16 @@ export default class Form extends Component {
     apiCall(this.state.url, this.state.name)
       .then(result => {
         this.setState({ apiData: result });
-        this.setState(state => ({ arr: [{ url: this.state.url, method: this.state.method }, ...state.arr] }));
-      });
+        this.setState(state => ({ history: [{ url: this.state.url, method: this.state.method }, ...state.history] }));
+      }
+      );
   }
 
-  render() { //check textarea value
+  render() {
     return (
-      <>
-        <History history={this.state.arr} />
+      
+      <div>
+        <History history={this.state.history} />
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="url" value={this.state.url} onChange={this.handleChange} />
           <div>
@@ -40,10 +42,12 @@ export default class Form extends Component {
             <input type="radio" name="method" value="DELETE" onChange={this.handleChange} />DELETE
             <button>Go!</button>
           </div>
-          <input type="textarea" value={this.state.textArea.value} onChange={this.handleChange} />
+          <textarea name="jsonInput" value={this.state.jsonInput} onChange={this.handleChange} cols="30" rows="10"></textarea>
+          {/* <input type="text" value={this.state.textArea.value} onChange={this.handleChange} /> */}
         </form>
         <Results results={this.state.apiData} />
-      </>
+      </div>
+    
     );
   }
 }
