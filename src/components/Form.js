@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import apiCall from '../services/api-call';
 import Results from './Results';
 import History from './History';
-import styles from './Form.css'
+import styles from './Form.css';
 
 export default class Form extends Component {
 
