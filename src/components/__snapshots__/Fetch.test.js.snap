@@ -1,55 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`api call fetch makes a successful api call and returns characters 1`] = `
-<div>
-  <History
-    history={Array []}
-  />
+<div
+  className="Form"
+>
+  <div
+    className="history"
+  >
+    <History
+      history={Array []}
+    />
+  </div>
   <form
     onSubmit={[Function]}
   >
     <input
+      className="urlInput"
       name="url"
       onChange={[Function]}
       type="text"
       value=""
     />
     <div>
-      <input
-        name="method"
-        onChange={[Function]}
-        type="radio"
-        value="GET"
-      />
-      GET
-      <input
-        name="method"
-        onChange={[Function]}
-        type="radio"
-        value="PUT"
-      />
-      PUT
-      <input
-        name="method"
-        onChange={[Function]}
-        type="radio"
-        value="POST"
-      />
-      POST
-      <input
-        name="method"
-        onChange={[Function]}
-        type="radio"
-        value="PATCH"
-      />
-      PATCH
-      <input
-        name="method"
-        onChange={[Function]}
-        type="radio"
-        value="DELETE"
-      />
-      DELETE
+      <label>
+        <input
+          className="radio"
+          name="method"
+          onChange={[Function]}
+          type="radio"
+          value="GET"
+        />
+        GET
+      </label>
+      <label>
+        <input
+          className="radio"
+          name="method"
+          onChange={[Function]}
+          type="radio"
+          value="PUT"
+        />
+        PUT
+      </label>
+      <label>
+        <input
+          className="radio"
+          name="method"
+          onChange={[Function]}
+          type="radio"
+          value="POST"
+        />
+        POST
+      </label>
+      <label>
+        <input
+          className="radio"
+          name="method"
+          onChange={[Function]}
+          type="radio"
+          value="PATCH"
+        />
+        PATCH
+      </label>
+      <label>
+        <input
+          className="radio"
+          name="method"
+          onChange={[Function]}
+          type="radio"
+          value="DELETE"
+        />
+        DELETE
+      </label>
       <button>
         Go!
       </button>
@@ -61,9 +83,9 @@ exports[`api call fetch makes a successful api call and returns characters 1`] =
       rows="10"
       value=""
     />
+    <Results
+      results={Array []}
+    />
   </form>
-  <Results
-    results={Array []}
-  />
 </div>
 `;
